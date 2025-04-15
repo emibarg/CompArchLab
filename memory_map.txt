@@ -1,0 +1,26 @@
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ram              0x0000000000000000 0x0000000000400000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD main.o
+
+.text           0x0000000000000000      0x5e8
+ *(.text*)
+ .text          0x0000000000000000      0x5e8 main.o
+                0x0000000000000000                _start
+
+.data           0x00000000000005e8        0x0
+ .data          0x00000000000005e8        0x0 main.o
+
+.bss            0x00000000000005e8        0x0
+ *(.bss*)
+ .bss           0x00000000000005e8        0x0 main.o
+OUTPUT(main.elf elf64-littleaarch64)
+LOAD linker stubs
