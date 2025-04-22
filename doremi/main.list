@@ -4,38 +4,88 @@ main.elf:     file format elf64-littleaarch64
 
 Disassembly of section .text:
 
-0000000000000000 <_start>:
+0000000000000000 <melody_loop-0x34>:
    0:	d53800a0 	mrs	x0, mpidr_el1
    4:	f2400400 	ands	x0, x0, #0x3
-   8:	54000281 	b.ne	58 <CoreLoop>  // b.any
-   c:	580002a0 	ldr	x0, 60 <CoreLoop+0x8>
-  10:	52800021 	mov	w1, #0x1                   	// #1
-  14:	53081c21 	lsl	w1, w1, #24
-  18:	b9000401 	str	w1, [x0, #4]
-  1c:	528ab003 	mov	w3, #0x5580                	// #21888
-  20:	72a00223 	movk	w3, #0x11, lsl #16
+   8:	54000481 	b.ne	98 <CoreLoop>  // b.any
+   c:	58000820 	ldr	x0, 110 <melody+0x70>
+  10:	91480000 	add	x0, x0, #0x200, lsl #12
+  14:	aa0003e9 	mov	x9, x0
+  18:	b9400401 	ldr	w1, [x0, #4]
+  1c:	12057021 	and	w1, w1, #0xf8ffffff
+  20:	32080021 	orr	w1, w1, #0x1000000
+  24:	b9000401 	str	w1, [x0, #4]
+  28:	58000794 	ldr	x20, 118 <melody+0x78>
+  2c:	d28000f5 	mov	x21, #0x7                   	// #7
+  30:	d2800016 	mov	x22, #0x0                   	// #0
 
-0000000000000024 <infloop>:
-  24:	52800021 	mov	w1, #0x1                   	// #1
-  28:	530e3421 	lsl	w1, w1, #18
-  2c:	b9001c01 	str	w1, [x0, #28]
-  30:	2a0303e2 	mov	w2, w3
+0000000000000034 <melody_loop>:
+  34:	eb1502df 	cmp	x22, x21
+  38:	5400028a 	b.ge	88 <end_melody>  // b.tcont
+  3c:	aa1603ec 	mov	x12, x22
+  40:	d37ced8c 	lsl	x12, x12, #4
+  44:	8b0c028c 	add	x12, x20, x12
+  48:	f940018a 	ldr	x10, [x12]
+  4c:	f940058b 	ldr	x11, [x12, #8]
 
-0000000000000034 <a>:
-  34:	71019042 	subs	w2, w2, #0x64
-  38:	54ffffe1 	b.ne	34 <a>  // b.any
-  3c:	52800021 	mov	w1, #0x1                   	// #1
-  40:	530e3421 	lsl	w1, w1, #18
-  44:	b9002801 	str	w1, [x0, #40]
-  48:	2a0303e2 	mov	w2, w3
+0000000000000050 <toggle_loop>:
+  50:	52800021 	mov	w1, #0x1                   	// #1
+  54:	530e3421 	lsl	w1, w1, #18
+  58:	b9001d21 	str	w1, [x9, #28]
+  5c:	aa0a03e0 	mov	x0, x10
+  60:	9400000b 	bl	8c <delay>
+  64:	52800021 	mov	w1, #0x1                   	// #1
+  68:	530e3421 	lsl	w1, w1, #18
+  6c:	b9002921 	str	w1, [x9, #40]
+  70:	aa0a03e0 	mov	x0, x10
+  74:	94000006 	bl	8c <delay>
+  78:	f100056b 	subs	x11, x11, #0x1
+  7c:	54fffeac 	b.gt	50 <toggle_loop>
+  80:	910006d6 	add	x22, x22, #0x1
+  84:	17ffffec 	b	34 <melody_loop>
 
-000000000000004c <bb>:
-  4c:	71019042 	subs	w2, w2, #0x64
-  50:	54ffffe1 	b.ne	4c <bb>  // b.any
-  54:	17fffff4 	b	24 <infloop>
+0000000000000088 <end_melody>:
+  88:	14000000 	b	88 <end_melody>
 
-0000000000000058 <CoreLoop>:
-  58:	14000000 	b	58 <CoreLoop>
-  5c:	00000000 	udf	#0
-  60:	3f200000 	.inst	0x3f200000 ; undefined
-  64:	00000000 	udf	#0
+000000000000008c <delay>:
+  8c:	f1000400 	subs	x0, x0, #0x1
+  90:	54ffffe1 	b.ne	8c <delay>  // b.any
+  94:	d65f03c0 	ret
+
+0000000000000098 <CoreLoop>:
+  98:	14000000 	b	98 <CoreLoop>
+  9c:	d503201f 	nop
+
+00000000000000a0 <melody>:
+  a0:	000037dc 	udf	#14300
+  a4:	00000000 	udf	#0
+  a8:	0000061e 	udf	#1566
+  ac:	00000000 	udf	#0
+  b0:	00003138 	udf	#12600
+  b4:	00000000 	udf	#0
+  b8:	000006de 	udf	#1758
+  bc:	00000000 	udf	#0
+  c0:	00002bc0 	udf	#11200
+  c4:	00000000 	udf	#0
+  c8:	000007b6 	udf	#1974
+  cc:	00000000 	udf	#0
+  d0:	00002968 	udf	#10600
+  d4:	00000000 	udf	#0
+  d8:	0000082e 	udf	#2094
+  dc:	00000000 	udf	#0
+  e0:	000024b8 	udf	#9400
+  e4:	00000000 	udf	#0
+  e8:	00000930 	udf	#2352
+  ec:	00000000 	udf	#0
+  f0:	00002134 	udf	#8500
+  f4:	00000000 	udf	#0
+  f8:	00000a50 	udf	#2640
+  fc:	00000000 	udf	#0
+ 100:	00001db0 	udf	#7600
+ 104:	00000000 	udf	#0
+ 108:	00000b8e 	udf	#2958
+ 10c:	00000000 	udf	#0
+ 110:	3f000000 	.inst	0x3f000000 ; undefined
+ 114:	00000000 	udf	#0
+ 118:	000000a0 	udf	#160
+ 11c:	00000000 	udf	#0
