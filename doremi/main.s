@@ -106,14 +106,16 @@ delay:
 CoreLoop:
     b CoreLoop
 
-// ---------- Melody Table (Data Section) ----------
-// Ensure proper alignment for .quad values.
+// Tabla con notas
+// Esta directiva hace que se alinee en 8 bytes lo que queremos guardar.
 .align 3
 melody:
-    .quad 14300, 1566     // DO 261 Hz: half‑period delay, toggle count (~3 sec)
-    .quad 12600, 1758     // RE 293 Hz
-    .quad 11200, 1974     // MI 329 Hz
-    .quad 10600, 2094     // FA 349 Hz
-    .quad  9400, 2352     // SOL 392 Hz
-    .quad  8500, 2640     // LA 440 Hz
-    .quad  7600, 2958     // SI 493 Hz
+    .quad 14300, 1566     // DO
+    .quad 12600, 1758     // RE
+    .quad 11200, 1974     // MI
+    .quad 10600, 2094     // FA 
+    .quad  9400, 2352     // SOL
+    .quad  8500, 2640     // LA
+    .quad  7600, 2958     // SI
+
+
