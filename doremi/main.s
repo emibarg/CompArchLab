@@ -92,8 +92,9 @@ toggle_loop:
     b melody_loop
 
 end_melody:
-    // Al terminar la melodia nos quedamos en un loop infinito.
-    b end_melody
+    // Al terminar la melodia volvemos a empezar.
+    mov x22, #0
+    b melody_loop
 
 // Procedure de delay:
 // Input: X0 = delay counter
@@ -110,12 +111,12 @@ CoreLoop:
 // Esta directiva hace que se alinee en 8 bytes lo que queremos guardar.
 .align 3
 melody:
-    .quad 14300, 1566     // DO
-    .quad 12600, 1758     // RE
-    .quad 11200, 1974     // MI
-    .quad 10600, 2094     // FA 
-    .quad  9400, 2352     // SOL
-    .quad  8500, 2640     // LA
-    .quad  7600, 2958     // SI
+    .quad 11500, 1309    // DO 261.8  vs 261.63
+    .quad 10230, 1469     // RE  294.3 vs 293.66
+    .quad 9100, 1649    // MI  330.9 vs 329.63
+    .quad 8650, 1747     // FA   348.1vs 349.23
+    .quad 7700, 1960     // SOL   391 vs 392
+    .quad 6800, 2200     // LA  442 vs 440
+    .quad 6100, 2470     // SI 493.5 vs 493.88
 
 
