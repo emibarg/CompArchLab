@@ -229,3 +229,85 @@ melody:
     .quad 9400, 391    // G
     .quad 14300, 277    // C#
     .quad 12600, 294    // D
+PS D:\Documents\Neowmsolver\CompArchLab> & C:/Python311/python.exe d:/Documents/Neowmsolver/CompArchLab/shortsong/notegen.py
+.align 3
+melody:
+    .quad 12600, 147    // D
+    .quad 1, 2500    // rest
+    .quad 12600, 147    // D
+    .quad 11200, 165    // E
+    .quad 10600, 174    // F
+    .quad 8500, 221    // A
+    .quad 9400, 196    // G
+    .quad 8500, 221    // A
+    .quad 14300, 131    // C
+    .quad 12600, 147    // D
+    .quad 11200, 165    // E
+    .quad 10600, 174    // F
+    .quad 11200, 165    // E
+    .quad 9400, 196    // G
+    .quad 8500, 221    // A
+    .quad 9400, 196    // G
+    .quad 10600, 174    // F
+    .quad 1, 2500    // rest
+    .quad 10600, 174    // F
+    .quad 1, 2500    // rest
+    .quad 10600, 174    // F
+    .quad 1, 2500    // rest
+    .quad 10600, 174    // F
+    .quad 8500, 221    // A
+    .quad 1, 2500    // rest
+    .quad 8500, 221    // A
+    .quad 9400, 196    // G
+    .quad 10600, 174    // F
+    .quad 8500, 221    // A
+    .quad 1, 2500    // rest
+    .quad 8500, 221    // A
+    .quad 1, 2500    // rest
+    .quad 8500, 221    // A
+    .quad 9400, 196    // G
+    .quad 8500, 221    // A
+    .quad 9400, 196    // G
+    .quad 10600, 174    // F
+    .quad 1, 2500    // rest
+    .quad 10600, 174    // F
+    .quad 1, 2500    // rest
+    .quad 10600, 174    // F
+    .quad 1, 2500    // rest
+    .quad 10600, 174    // F
+    .quad 8500, 221    // A
+    .quad 1, 2500    // rest
+    .quad 8500, 221    // A
+    .quad 9400, 196    // G
+    .quad 10600, 174    // F
+    .quad 8500, 221    // A
+    .quad 1, 2500    // rest
+    .quad 8500, 221    // A
+    .quad 1, 2500    // rest
+    .quad 8500, 221    // A
+    .quad 14300, 138    // C#
+    .quad 1, 2500    // rest
+    .quad 14300, 138    // C#
+    .quad 1, 2500    // rest
+    .quad 14300, 138    // C#
+    .quad 10600, 174    // F
+    .quad 1, 2500    // rest
+    .quad 10600, 174    // F
+    .quad 1, 2500    // rest
+    .quad 10600, 174    // F
+    .quad 8500, 221    // A
+    .quad 1, 2500    // rest
+    .quad 8500, 221    // A
+    .quad 9400, 196    // G
+    .quad 10600, 174    // F
+    .quad 8500, 221    // A
+    .quad 1, 2500    // rest
+    .quad 8500, 221    // A
+    .quad 1, 2500    // rest
+    .quad 8500, 221    // A
+    .quad 9400, 196    // G
+    .quad 14300, 131    // C
+    .quad 9400, 196    // G
+    .quad 14300, 138    // C#
+    .quad 12600, 147    // D
+    
