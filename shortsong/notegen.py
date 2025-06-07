@@ -1,111 +1,104 @@
-# Note frequency table based on your .quad values
-note_freqs = {
-    "C": 1309,  # DO (261.8 Hz)
-    "D": 1469,  # RE (294.3 Hz)
-    "E": 1649,  # MI (330.9 Hz)
-    "F": 1747,  # FA (348.1 Hz)
-    "G": 1960,  # SOL (391 Hz)
-    "A": 2200,  # LA (442 Hz)
-    "B": 2470,  # SI (493.5 Hz)
-    "C#": 1380,  # Approximate frequency; adjust if needed
-    "rest": 500,  # Special case for rest (only second column matters)
+note_frequencies = {
+    "C": 261.8,  # DO
+    "D": 294.3,  # RE
+    "E": 330.9,  # MI
+    "F": 348.1,  # FA
+    "G": 391.0,  # SOL
+    "A": 442.0,  # LA
+    "B": 493.5,  # SI
+    "C#": 277.0,
+    "rest": 0.0,
 }
 
-
-# Function to convert melody list to .quad lines
-def print_melody(melody):
-    print(".align 3")
-    print("melody:")
-    for note, duration in melody:
-        if note.lower() == "rest":
-            print(f"    .quad 1, {note_freqs['rest']}    // rest")
-        elif note in note_freqs:
-            half_period = int(note_freqs[note] * duration)
-            print(f"    .quad {half_period}, {note_freqs[note]}    // {note}")
-        else:
-            print(f"    // Unknown note '{note}'")
-
-
-# Example usage
 melody_data = [
-    ("D", 1),
+    ("D", 12600),
     ("rest", 1),
-    ("D", 1),
-    ("E", 1),
-    ("F", 1),
-    ("A", 1),
-    ("G", 1),
-    ("A", 1),
-    ("C", 1),
-    ("D", 1),
-    ("E", 1),
-    ("F", 1),
-    ("E", 1),
-    ("G", 1),
-    ("A", 1),
-    ("G", 1),
-    ("F", 1),
+    ("D", 12600),
+    ("E", 11200),
+    ("F", 10600),
+    ("A", 8500),
+    ("G", 9400),
+    ("A", 8500),
+    ("C", 14300),
+    ("D", 12600),
+    ("E", 11200),
+    ("F", 10600),
+    ("E", 11200),
+    ("G", 9400),
+    ("A", 8500),
+    ("G", 9400),
+    ("F", 10600),
     ("rest", 1),
-    ("F", 1),
+    ("F", 10600),
     ("rest", 1),
-    ("F", 1),
+    ("F", 10600),
     ("rest", 1),
-    ("F", 1),
-    ("A", 1),
+    ("F", 10600),
+    ("A", 8500),
     ("rest", 1),
-    ("A", 1),
-    ("G", 1),
-    ("F", 1),
-    ("A", 1),
+    ("A", 8500),
+    ("G", 9400),
+    ("F", 10600),
+    ("A", 8500),
     ("rest", 1),
-    ("A", 1),
+    ("A", 8500),
     ("rest", 1),
-    ("A", 1),
-    ("G", 1),
-    ("A", 1),
-    ("G", 1),
-    ("F", 1),
+    ("A", 8500),
+    ("G", 9400),
+    ("A", 8500),
+    ("G", 9400),
+    ("F", 10600),
     ("rest", 1),
-    ("F", 1),
+    ("F", 10600),
     ("rest", 1),
-    ("F", 1),
+    ("F", 10600),
     ("rest", 1),
-    ("F", 1),
-    ("A", 1),
+    ("F", 10600),
+    ("A", 8500),
     ("rest", 1),
-    ("A", 1),
-    ("G", 1),
-    ("F", 1),
-    ("A", 1),
+    ("A", 8500),
+    ("G", 9400),
+    ("F", 10600),
+    ("A", 8500),
     ("rest", 1),
-    ("A", 1),
+    ("A", 8500),
     ("rest", 1),
-    ("A", 1),
-    ("C#", 1),
+    ("A", 8500),
+    ("C#", 14300),
     ("rest", 1),
-    ("C#", 1),
+    ("C#", 14300),
     ("rest", 1),
-    ("C#", 1),
-    ("F", 1),
+    ("C#", 14300),
+    ("F", 10600),
     ("rest", 1),
-    ("F", 1),
+    ("F", 10600),
     ("rest", 1),
-    ("F", 1),
-    ("A", 1),
+    ("F", 10600),
+    ("A", 8500),
     ("rest", 1),
-    ("A", 1),
-    ("G", 1),
-    ("F", 1),
-    ("A", 1),
+    ("A", 8500),
+    ("G", 9400),
+    ("F", 10600),
+    ("A", 8500),
     ("rest", 1),
-    ("A", 1),
+    ("A", 8500),
     ("rest", 1),
-    ("A", 1),
-    ("G", 1),
-    ("C", 1),
-    ("G", 1),
-    ("C#", 1),
-    ("D", 1),
+    ("A", 8500),
+    ("G", 9400),
+    ("C", 14300),
+    ("G", 9400),
+    ("C#", 14300),
+    ("D", 12600),
 ]
 
-print_melody(melody_data)
+print(".align 3")
+print("melody:")
+for note, duration_value in melody_data:
+    freq = note_frequencies.get(note)
+    if freq == 0.0:
+        print(f"    .quad {duration_value}, 0    // rest")
+    elif freq:
+        freq_int = round(freq * 1)  # duration is fixed at 1s
+        print(f"    .quad {duration_value}, {freq_int}    // {note}")
+    else:
+        print(f"    // Unknown note: {note}")
