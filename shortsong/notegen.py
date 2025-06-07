@@ -7,7 +7,7 @@ note_frequencies = {
     "A": 442.0,  # LA
     "B": 493.5,  # SI
     "C#": 277.0,
-    "rest": 0.0,
+    "rest": 500,
 }
 
 melody_data = [

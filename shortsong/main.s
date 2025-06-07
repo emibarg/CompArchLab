@@ -152,7 +152,7 @@ CoreLoop:
 .align 3
 melody:
     .quad 12600, 294    // D
-    .quad 1, 0    // rest
+    .quad 1, 500    // rest
     .quad 12600, 294    // D
     .quad 11200, 331    // E
     .quad 10600, 348    // F
@@ -168,61 +168,61 @@ melody:
     .quad 8500, 442    // A
     .quad 9400, 391    // G
     .quad 10600, 348    // F
-    .quad 1, 0    // rest
+    .quad 1, 500    // rest
     .quad 10600, 348    // F
-    .quad 1, 0    // rest
+    .quad 1, 500    // rest
     .quad 10600, 348    // F
-    .quad 1, 0    // rest
+    .quad 1, 500    // rest
     .quad 10600, 348    // F
     .quad 8500, 442    // A
-    .quad 1, 0    // rest
+    .quad 1, 500    // rest
     .quad 8500, 442    // A
     .quad 9400, 391    // G
     .quad 10600, 348    // F
     .quad 8500, 442    // A
-    .quad 1, 0    // rest
+    .quad 1, 500    // rest
     .quad 8500, 442    // A
-    .quad 1, 0    // rest
-    .quad 8500, 442    // A
-    .quad 9400, 391    // G
+    .quad 1, 500    // rest
     .quad 8500, 442    // A
     .quad 9400, 391    // G
-    .quad 10600, 348    // F
-    .quad 1, 0    // rest
-    .quad 10600, 348    // F
-    .quad 1, 0    // rest
-    .quad 10600, 348    // F
-    .quad 1, 0    // rest
-    .quad 10600, 348    // F
-    .quad 8500, 442    // A
-    .quad 1, 0    // rest
     .quad 8500, 442    // A
     .quad 9400, 391    // G
     .quad 10600, 348    // F
+    .quad 1, 500    // rest
+    .quad 10600, 348    // F
+    .quad 1, 500    // rest
+    .quad 10600, 348    // F
+    .quad 1, 500    // rest
+    .quad 10600, 348    // F
     .quad 8500, 442    // A
-    .quad 1, 0    // rest
+    .quad 1, 500    // rest
     .quad 8500, 442    // A
-    .quad 1, 0    // rest
+    .quad 9400, 391    // G
+    .quad 10600, 348    // F
+    .quad 8500, 442    // A
+    .quad 1, 500    // rest
+    .quad 8500, 442    // A
+    .quad 1, 500    // rest
     .quad 8500, 442    // A
     .quad 14300, 277    // C#
-    .quad 1, 0    // rest
+    .quad 1, 500    // rest
     .quad 14300, 277    // C#
-    .quad 1, 0    // rest
+    .quad 1, 500    // rest
     .quad 14300, 277    // C#
     .quad 10600, 348    // F
-    .quad 1, 0    // rest
+    .quad 1, 500    // rest
     .quad 10600, 348    // F
-    .quad 1, 0    // rest
+    .quad 1, 500    // rest
     .quad 10600, 348    // F
     .quad 8500, 442    // A
-    .quad 1, 0    // rest
+    .quad 1, 500    // rest
     .quad 8500, 442    // A
     .quad 9400, 391    // G
     .quad 10600, 348    // F
     .quad 8500, 442    // A
-    .quad 1, 0    // rest
+    .quad 1, 500    // rest
     .quad 8500, 442    // A
-    .quad 1, 0    // rest
+    .quad 1, 500    // rest
     .quad 8500, 442    // A
     .quad 9400, 391    // G
     .quad 14300, 262    // C
