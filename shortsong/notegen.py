@@ -98,7 +98,7 @@ for note, duration_value in melody_data:
     if freq == 0.0:
         print(f"    .quad {duration_value}, 0    // rest")
     elif freq:
-        freq_int = round(freq * 0.5)  # duration is fixed at 1s
+        freq_int = round(freq * 0.25)  # duration is fixed at 1s
         print(f"    .quad {duration_value}, {freq_int}    // {note}")
     else:
         print(f"    // Unknown note: {note}")
