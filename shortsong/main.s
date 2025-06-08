@@ -156,30 +156,30 @@ melody:
     .quad 12600, 37    // D
     .quad 11200, 41    // E
     .quad 10600, 44    // F
-    .quad 8500, 55    // A
-    .quad 9400, 49    // G
-    .quad 8500, 55    // A
+    .quad 8500, 45    // A
+    .quad 9400, 39    // G
+    .quad 8500, 45    // A
     .quad 14300, 33    // C
-    .quad 12600, 37    // D
-    .quad 11200, 41    // E
+    .quad 12600, 27    // D
+    .quad 11200, 31    // E
     .quad 10600, 44    // F
     .quad 11200, 41    // E
     .quad 9400, 49    // G
     .quad 8500, 55    // A
     .quad 9400, 49    // G
-    .quad 10600, 44    // F
+    .quad 10600, 24    // F
     .quad 1, 12500    // rest
-    .quad 10600, 44    // F
+    .quad 10600, 24    // F
     .quad 1, 12500    // rest
-    .quad 10600, 44    // F
+    .quad 10600, 24    // F
     .quad 1, 12500    // rest
-    .quad 10600, 44    // F
-    .quad 8500, 55    // A
+    .quad 10600, 24    // F
+    .quad 8500, 35    // A
     .quad 1, 12500    // rest
-    .quad 8500, 55    // A
-    .quad 9400, 49    // G
-    .quad 10600, 44    // F
-    .quad 8500, 55    // A
+    .quad 8500, 35    // A
+    .quad 9400, 29    // G
+    .quad 10600, 24    // F
+    .quad 8500, 35    // A
     .quad 1, 12500    // rest
     .quad 8500, 55    // A
     .quad 1, 12500    // rest
