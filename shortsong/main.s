@@ -160,50 +160,50 @@ melody:
     .quad 9400, 98    // G
     .quad 8500, 110    // A
     .quad 14300, 65    // C
-    .quad 12600, 74    // D
-    .quad 11200, 83    // E
+    .quad 12600, 64    // D
+    .quad 11200, 73    // E
     .quad 10600, 87    // F
     .quad 11200, 83    // E
     .quad 9400, 98    // G
     .quad 8500, 110    // A
-    .quad 9400, 98    // G
-    .quad 10600, 87    // F
+    .quad 9400, 68    // G
+    .quad 10600, 57    // F
     .quad 1, 25000    // rest
-    .quad 10600, 87    // F
+    .quad 10600, 57    // F
     .quad 1, 25000    // rest
-    .quad 10600, 87    // F
+    .quad 10600, 57    // F
     .quad 1, 25000    // rest
-    .quad 10600, 87    // F
-    .quad 8500, 110    // A
+    .quad 10600, 57    // F
+    .quad 8500, 80    // A
     .quad 1, 25000    // rest
-    .quad 8500, 110    // A
-    .quad 9400, 98    // G
-    .quad 10600, 87    // F
-    .quad 8500, 110    // A
+    .quad 8500, 80    // A
+    .quad 9400, 78    // G
+    .quad 10600, 67    // F
+    .quad 8500, 80    // A
     .quad 1, 25000    // rest
-    .quad 8500, 110    // A
+    .quad 8500, 80    // A
     .quad 1, 25000    // rest
-    .quad 8500, 110    // A
-    .quad 9400, 98    // G
-    .quad 8500, 110    // A
-    .quad 9400, 98    // G
-    .quad 10600, 87    // F
+    .quad 8500, 80    // A
+    .quad 9400, 58    // G
+    .quad 8500, 80    // A
+    .quad 9400, 58    // G
+    .quad 10600, 67    // F
     .quad 1, 25000    // rest
-    .quad 10600, 87    // F
+    .quad 10600, 67    // F
     .quad 1, 25000    // rest
-    .quad 10600, 87    // F
+    .quad 10600, 67    // F
     .quad 1, 25000    // rest
-    .quad 10600, 87    // F
-    .quad 8500, 110    // A
+    .quad 10600, 67    // F
+    .quad 8500, 80    // A
     .quad 1, 25000    // rest
-    .quad 8500, 110    // A
-    .quad 9400, 98    // G
-    .quad 10600, 87    // F
-    .quad 8500, 110    // A
+    .quad 8500, 80    // A
+    .quad 9400, 58    // G
+    .quad 10600, 67    // F
+    .quad 8500, 80    // A
     .quad 1, 25000    // rest
-    .quad 8500, 110    // A
+    .quad 8500, 80    // A
     .quad 1, 25000    // rest
-    .quad 8500, 110    // A
+    .quad 8500, 80    // A
     .quad 14300, 69    // C#
     .quad 1, 25000    // rest
     .quad 14300, 69    // C#
