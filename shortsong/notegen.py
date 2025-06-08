@@ -1,13 +1,24 @@
 note_frequencies = {
-    "C": 261.8,  # DO
-    "D": 294.3,  # RE
-    "E": 330.9,  # MI
-    "F": 348.1,  # FA
-    "G": 391.0,  # SOL
-    "A": 442.0,  # LA
-    "B": 493.5,  # SI
+    "C": 261.8,
+    "D": 294.3,
+    "E": 330.9,
+    "F": 348.1,
+    "G": 391.0,
+    "A": 442.0,
+    "B": 493.5,
     "C#": 277.0,
-    "rest": 100000,
+    "rest": 0.0,
+}
+
+calculated_note_values = {
+    "C": 11500,
+    "D": 10230,
+    "E": 9100,
+    "F": 8650,
+    "G": 7700,
+    "A": 6800,
+    "B": 6100,
+    "C#": 10800,
 }
 
 melody_data = [
@@ -94,11 +105,11 @@ melody_data = [
 print(".align 3")
 print("melody:")
 for note, duration_value in melody_data:
-    freq = note_frequencies.get(note)
-    if freq == 0.0:
-        print(f"    .quad {duration_value}, 0    // rest")
-    elif freq:
-        freq_int = round(freq * 0.1875)  # duration is fixed at 1s
-        print(f"    .quad {duration_value}, {freq_int}    // {note}")
+    if note == "rest":
+        print(f"    .quad {duration_value}, 18750    // rest")
+    elif note in note_frequencies:
+        freq = note_frequencies[note]
+        duration = round(freq * 1.0)
+        print(f"    .quad {duration_value}, {duration}    // {note}")
     else:
         print(f"    // Unknown note: {note}")

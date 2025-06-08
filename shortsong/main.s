@@ -151,82 +151,81 @@ CoreLoop:
     // Line 1: D, (rest), D, E, F, A, G, A, C, D, E, F, E, G, A, G, F
 .align 3
 melody:
-    .quad 10230, 55    // D
+    .quad 10230, 294    // D
     .quad 1, 18750    // rest
-    .quad 10230, 55    // D
-    .quad 9100, 62    // E
-    .quad 8650, 65    // F
-    .quad 6800, 83    // A
-    .quad 7700, 73    // G
-    .quad 6800, 83    // A
-    .quad 11500, 49    // C
-    .quad 10230, 55    // D
-    .quad 9100, 62    // E
-    .quad 8650, 65    // F
-    .quad 9100, 62    // E
-    .quad 7700, 73    // G
-    .quad 6800, 83    // A
-    .quad 7700, 73    // G
-    .quad 8650, 65    // F
+    .quad 10230, 294    // D
+    .quad 9100, 331    // E
+    .quad 8650, 348    // F
+    .quad 6800, 442    // A
+    .quad 7700, 391    // G
+    .quad 6800, 442    // A
+    .quad 11500, 262    // C
+    .quad 10230, 294    // D
+    .quad 9100, 331    // E
+    .quad 8650, 348    // F
+    .quad 9100, 331    // E
+    .quad 7700, 391    // G
+    .quad 6800, 442    // A
+    .quad 7700, 391    // G
+    .quad 8650, 348    // F
     .quad 1, 18750    // rest
-    .quad 8650, 65    // F
+    .quad 8650, 348    // F
     .quad 1, 18750    // rest
-    .quad 8650, 65    // F
+    .quad 8650, 348    // F
     .quad 1, 18750    // rest
-    .quad 8650, 65    // F
-    .quad 6800, 83    // A
+    .quad 8650, 348    // F
+    .quad 6800, 442    // A
     .quad 1, 18750    // rest
-    .quad 6800, 83    // A
-    .quad 7700, 73    // G
-    .quad 8650, 65    // F
-    .quad 6800, 83    // A
+    .quad 6800, 442    // A
+    .quad 7700, 391    // G
+    .quad 8650, 348    // F
+    .quad 6800, 442    // A
     .quad 1, 18750    // rest
-    .quad 6800, 83    // A
+    .quad 6800, 442    // A
     .quad 1, 18750    // rest
-    .quad 6800, 83    // A
-    .quad 7700, 73    // G
-    .quad 6800, 83    // A
-    .quad 7700, 73    // G
-    .quad 8650, 65    // F
+    .quad 6800, 442    // A
+    .quad 7700, 391    // G
+    .quad 6800, 442    // A
+    .quad 7700, 391    // G
+    .quad 8650, 348    // F
     .quad 1, 18750    // rest
-    .quad 8650, 65    // F
+    .quad 8650, 348    // F
     .quad 1, 18750    // rest
-    .quad 8650, 65    // F
+    .quad 8650, 348    // F
     .quad 1, 18750    // rest
-    .quad 8650, 65    // F
-    .quad 6800, 83    // A
+    .quad 8650, 348    // F
+    .quad 6800, 442    // A
     .quad 1, 18750    // rest
-    .quad 6800, 83    // A
-    .quad 7700, 73    // G
-    .quad 8650, 65    // F
-    .quad 6800, 83    // A
+    .quad 6800, 442    // A
+    .quad 7700, 391    // G
+    .quad 8650, 348    // F
+    .quad 6800, 442    // A
     .quad 1, 18750    // rest
-    .quad 6800, 83    // A
+    .quad 6800, 442    // A
     .quad 1, 18750    // rest
-    .quad 6800, 83    // A
-    .quad 10800, 52    // C#
+    .quad 6800, 442    // A
+    .quad 10800, 277    // C#
     .quad 1, 18750    // rest
-    .quad 10800, 52    // C#
+    .quad 10800, 277    // C#
     .quad 1, 18750    // rest
-    .quad 10800, 52    // C#
-    .quad 8650, 65    // F
+    .quad 10800, 277    // C#
+    .quad 8650, 348    // F
     .quad 1, 18750    // rest
-    .quad 8650, 65    // F
+    .quad 8650, 348    // F
     .quad 1, 18750    // rest
-    .quad 8650, 65    // F
-    .quad 6800, 83    // A
+    .quad 8650, 348    // F
+    .quad 6800, 442    // A
     .quad 1, 18750    // rest
-    .quad 6800, 83    // A
-    .quad 7700, 73    // G
-    .quad 8650, 65    // F
-    .quad 6800, 83    // A
+    .quad 6800, 442    // A
+    .quad 7700, 391    // G
+    .quad 8650, 348    // F
+    .quad 6800, 442    // A
     .quad 1, 18750    // rest
-    .quad 6800, 83    // A
+    .quad 6800, 442    // A
     .quad 1, 18750    // rest
-    .quad 6800, 83    // A
-    .quad 7700, 73    // G
-    .quad 11500, 49    // C
-    .quad 7700, 73    // G
-    .quad 10800, 52    // C#
-    .quad 10230, 55    // D
-   
+    .quad 6800, 442    // A
+    .quad 7700, 391    // G
+    .quad 11500, 262    // C
+    .quad 7700, 391    // G
+    .quad 10800, 277    // C#
+    .quad 10230, 294    // D
