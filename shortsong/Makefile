@@ -1,4 +1,4 @@
-ARMGNU ?= aarch64-linux-gnu
+ARMGNU ?= aarch64-unknown-linux-gnu
 
 AOPS = --warn --fatal-warnings
 
