@@ -1,16 +1,16 @@
-/*********************************************************************************************
+/*******************************************************************************************************
 *   main.s
-*   Organización y arquitectura de computadoras - UCC
-*   2025
+*   Organización y arquitectura de computadoras - UCC - 2025
+*   Intregantes: Barg Emiliano y Gomez Nicolas Santiago.
+*  
+*   Este programa en Assembler sirve para una Raspberry PI 3B,
+*   este programa usa el GPIO18 para hacer audio de 1 bit, usando una tabla con:
 *
-*   This bare‑metal ARMv8 program for the Raspberry Pi 3 configures GPIO18 as an output,
-*   then plays a melody with a note sequence. Each note uses:
+*       - Un valor que controla la duracion de medio periodo (controla la frecuencia).
+*       - Un valor que controla la duracion de la nota (cuanto tiempo dura).
 *
-*       - A half‑period delay value (controls the frequency/pitch).
-*       - A toggle count (controls how many on/off pulses are produced).
-*
-*   Rests are implemented when the half‑period value is 0, using the toggle count as a delay multiplier.
-**********************************************************************************************/
+*   Tambien se implentan descansos, este programa reproduce el tema de la introduccion de Gravity Falls.
+********************************************************************************************************/
 .text
 
 .equ PERIPHERAL_BASE, 0x3F000000    // Peripheral Base Address
@@ -21,62 +21,62 @@
 
 .global _start
 _start:
-    // ---------- Core Initialization ----------
-    // Get core ID. Only core 0 continues; cores 1-3 go into an infinite loop.
-    mrs x0, MPIDR_EL1           // Read Multiprocessor Affinity Register
-    ands x0, x0, #3             // Extract core ID bits (0..1)
-    b.ne CoreLoop               // If core ID != 0, branch to infinite loop
+    // ---------- Core Init  ----------
+    // Set Cores 1..3 To Infinite Loop (no modificar)
+    mrs x0, MPIDR_EL1           // X0 = Multiprocessor Affinity Register (MPIDR)
+    ands x0, x0, #3             // X0 = CPU ID (Bits 0..1)
+    b.ne CoreLoop               // IF (CPU ID != 0) Branch To Infinite Loop (Core ID 1..3)
 
-    // ---------- GPIO Setup ----------
-    // Compute the GPIO base pointer:
+    // ---------- Setup del GPIO  ----------
+    // Computamos el puntero a GPIO:
     ldr x0, =PERIPHERAL_BASE
-    add x0, x0, #GPIO_BASE      // x0 now points to the GPIO registers
-    // Save the GPIO base pointer in x9 for future accesses.
+    add x0, x0, #GPIO_BASE      // x0 ahora apunta a los registros de  GPIO
+    // Guardamos en X9 el puntero base a GPIO.
     mov x9, x0
 
     add xzr,xzr,xzr //nop
     add xzr,xzr,xzr //nop 8
 
-    // Configure GPIO18 as an output.
-    // In GPIO_GPFSEL1, bits 24-26 control GPIO18. Set these to 001 for output.
+    // Configuramos GPIO18 como output.
+    // En GPIO_GPFSEL1, los bits 24-26 controlan GPIO18. Ponemos en 001 para que sea output.
     ldr w1, [x0, #GPIO_GPFSEL1]
-    bic w1, w1, #(7 << 24)      // Clear bits 24-26 for GPIO18
-    orr w1, w1, #(1 << 24)      // Set bit 24 (001: output)
+    bic w1, w1, #(7 << 24)      // Llevamos a 0 los bits 24-26 para GPIO18
+    orr w1, w1, #(1 << 24)      // Seteamos en el bit 24 (001: output)
     str w1, [x0, #GPIO_GPFSEL1]
 
-    // ---------- Melody Playback Setup ----------
-    // Load the pointer to the melody table.
+    // ---------- SETUP PARA LA CANCION -----------------
+    // Guardamos la dir donde esta la tabla con las notas.
     ldr x20, =melody
-    // Total number of note entries is 69 (as defined by the table).
+    // Guardamos la cantidad total de notas 117 en la tabla.
     mov x21, #117              
-    // Initialize note index to 0.
+    // Iniciamos el contador en 0.
     mov x22, #0
     add xzr,xzr,xzr //nop 16
 
 melody_loop:
     cmp x22, x21
-    b.ge end_melody          // If index >= total notes, finish playback
+    b.ge end_melody          // If index >= notas total, terminamos
 
-    // Each note entry is 16 bytes (2 x .quad values).
-    // Compute the address for the current note: x20 + (x22 << 4)
+    // Cada entrada de la tabla es 16 bytes (2 x .quad values).
+    // Computamos la dir de la siguiente nota: x20 + (x22 << 4)
     mov x12, x22
     lsl x12, x12, #4         // x12 = x22 * 16
-    add x12, x20, x12        // x12 now points to the current note's entry
+    add x12, x20, x12        // x12 ahora apunta a la direccion de la nota actual
 
-    // Load the half‑period delay for this note into x10.
+    // Cargamos el limite  para la frecuencia en x10.
     ldr x10, [x12, #0]
-    // Load the toggle count for this note into x11 (offset 8 bytes).
+    // Cargamos el limite para la dur en x11 (offset 8 bytes).
     ldr x11, [x12, #8]
 
-    // ---------- Check for Rest ----------
-    cmp x10, #0 //24
-    beq rest_loop            // If half‑period = 0, this is a rest (pause)
+    // ---------- IF Rest ----------
+    cmp x10, #0 // 24
+    beq rest_loop            // If half‑period = 0, vamos a un descanso (pause)
 
 
 
 toggle_loop:
-    // ---------- Pulse Generation for the Note ----------
-    // Set GPIO18 high.
+    // ---------- Generacion del pulso para la nota  ----------
+    // GPIO18 a high.
     add xzr,xzr,xzr //nop
     add xzr,xzr,xzr //nop
     add xzr,xzr,xzr //nop
@@ -85,32 +85,32 @@ toggle_loop:
     add xzr,xzr,xzr //nop
     add xzr,xzr,xzr //nop 32
     mov w1, #1
-    lsl w1, w1, #18         // Bit mask for GPIO18 (bit 18)
+    lsl w1, w1, #18         // Mascara para GPIO18 (bit 18)
     str w1, [x9, #GPIO_GPSET0]
 
-    // Delay for the half‑period.
+    // Delay para medio periodo.
     mov x0, x10
     bl delay
 
-    // Set GPIO18 low.
+    // GPIO18 a low.
     mov w1, #1
     lsl w1, w1, #18 
-    str w1, [x9, #GPIO_GPCLR0] //40
+    str w1, [x9, #GPIO_GPCLR0] // 40
 
 
-    // Delay again for the half‑period.
+    // Delay de vuelta para medio periodo.
     mov x0, x10
     bl delay
 
-    // Decrement the toggle count.
+    // Disminuimos el indice para la duracion.
     subs x11, x11, #1
-    b.gt toggle_loop        // If toggle count > 0, repeat this note's cycle
+    b.gt toggle_loop        // If toggle count > 0, repetimos.
 
-    b next_note             // Done with this note, go to next 36
+    b next_note             // Terminamos, vamos para la siguiente nota 36
 
 rest_loop:
-    // ---------- Silent Delay (Rest) ----------
-    mov x0, x11             // Use toggle count as delay multiplier
+    // ---------- Delay (Descanso) ----------
+    mov x0, x11             // Ahora la duracion es la duracion del rest.
     add xzr,xzr,xzr //nop
     add xzr,xzr,xzr //nop 48
 delay_rest:
@@ -119,36 +119,36 @@ delay_rest:
     b.gt delay_rest
 
 next_note:
-    add x22, x22, #1        // Increment the note index
+    add x22, x22, #1        // Aumentamos el index y volvemos al loop.
     b melody_loop
 
 end_melody:
-    // End of melody: hang in an infinite loop.
+    // Cuando termina la cancion: nos quedamos en un loop infinito.
     b end_melody
     add xzr,xzr,xzr //nop
     add xzr,xzr,xzr //nop 56
 
-// ---------- Improved Delay Subroutine ----------
+// ---------- Delay (Nota) ----------
 // Input: x0 = delay counter
-// The subroutine checks if the counter is zero and uses a NOP to ensure
-// constant cycle cost for each iteration.
+// Revisamos el contador y hay un nop para asegurar
+// que la duracion de cada ciclo sea constante.
 delay:
-    cbz x0, delay_done      // If counter is zero, exit delay
+    cbz x0, delay_done      // If counter == 0, salimos del delay.
 delay_loop:
-    nop                     // No-operation for constant cycle timing
-    subs x0, x0, #1         // Decrement the counter
-    b.ne delay_loop         // Repeat until counter reaches zero
+    nop                     // Nop para que el tiempo sea mas constante.
+    subs x0, x0, #1         // Disminuimos el contador.
+    b.ne delay_loop         // Repetir hasta llegar a 0
 delay_done:
-    ret                     // Return to caller
+    ret                     // Return.
 
 // ---------- Infinite Loop for Cores 1-3 ----------
 CoreLoop:
     b CoreLoop //49
 
-// ---------- Melody Table (Data Section) ----------
-// Ensure proper alignment for .quad values.
+// ---------- Tabla de Notas (Datos) ----------
+// Hay que asegurarse que los valores .quad esten bien alineados..
 
-    // Line 1: D, (rest), D, E, F, A, G, A, C, D, E, F, E, G, A, G, F
+    // Inicio de tabla
 .align 3
     melody:
         .quad 4320, 131    // F5, seminegra
