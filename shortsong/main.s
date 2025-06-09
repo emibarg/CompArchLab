@@ -183,36 +183,44 @@ CoreLoop:
         .quad 11500, 49    // C4, seminegra
         .quad 6800, 83    // A4, seminegra
         .quad 10230, 55    // D4, seminegra
-        .quad 10230, 276    // D4, blanca con punto
-        .quad 9100, 124    // E4, negra
-        .quad 8650, 522    // F4, blanca completa
+        .quad 5140, 551    // D5, blanca con punto
+        .quad 4550, 247    // E5, negra
+        .quad 4320, 1048    // F5, blanca completa
         .quad 3428, 495    // A5, negra con punto
-        .quad 7700, 73    // G4, seminegra
-        .quad 7700, 147    // G4, negra
+        .quad 3830, 147    // G5, seminegra
+        .quad 1, 1000    // rest, seminegra
+        .quad 3830, 294    // G5, negra
         .quad 3428, 330    // A5, negra
-        .quad 11500, 393    // C4, blanca completa
-        .quad 10230, 276    // D4, blanca con punto
-        .quad 9100, 124    // E4, negra
-        .quad 8650, 261    // F4, blanca
-        .quad 9100, 248    // E4, blanca
-        .quad 7700, 293    // G4, blanca
+        .quad 5740, 785    // C5, blanca completa
+        .quad 5140, 551    // D5, blanca con punto
+        .quad 4550, 247    // E5, negra
+        .quad 4320, 524    // F5, blanca
+        .quad 4550, 494    // E5, blanca
+        .quad 3830, 588    // G5, blanca
         .quad 3428, 660    // A5, blanca
-        .quad 7700, 293    // G4, blanca
-        .quad 8650, 261    // F4, blanca
-        .quad 8650, 131    // F4, negra
-        .quad 8650, 131    // F4, negra
-        .quad 8650, 131    // F4, negra
-        .quad 8650, 131    // F4, negra
+        .quad 3830, 588    // G5, blanca
+        .quad 4320, 524    // F5, blanca
+        .quad 1, 1000    // rest, seminegra
+        .quad 4320, 262    // F5, negra
+        .quad 1, 1000    // rest, seminegra
+        .quad 4320, 262    // F5, negra
+        .quad 1, 1000    // rest, seminegra
+        .quad 4320, 262    // F5, negra
+        .quad 1, 1000    // rest, seminegra
+        .quad 4320, 262    // F5, negra
         .quad 3428, 330    // A5, negra
+        .quad 1, 1000    // rest, seminegra
         .quad 3428, 330    // A5, negra
-        .quad 7700, 147    // G4, negra
-        .quad 8650, 131    // F4, negra
-        .quad 8650, 131    // F4, negra
+        .quad 3830, 294    // G5, negra
+        .quad 4320, 262    // F5, negra
+        .quad 1, 1000    // rest, seminegra
+        .quad 4320, 262    // F5, negra
         .quad 3428, 330    // A5, negra
+        .quad 1, 1000    // rest, seminegra
         .quad 3428, 330    // A5, negra
+        .quad 1, 1000    // rest, seminegra
         .quad 3428, 330    // A5, negra
-        .quad 7700, 147    // G4, negra
+        .quad 3830, 294    // G5, negra
         .quad 3428, 330    // A5, negra
-        .quad 7700, 147    // G4, negra
-        .quad 8650, 131    // F4, negra
-        
+        .quad 3830, 294    // G5, negra
+        .quad 4320, 262    // F5, negra

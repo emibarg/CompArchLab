@@ -35,7 +35,7 @@ def generate_quad(note_str, duration_label):
         return f"// Duración desconocida: {duration_label}"
 
     if note_str.lower() == "rest":
-        return f".quad 0, 0    // rest, {duration_label}"
+        return f".quad 1, 1000    // rest, {duration_label}"
 
     if note_str not in base_frequencies or note_str not in base_values:
         return f"// Nota desconocida: {note_str}"
@@ -56,17 +56,17 @@ input_notes = [
     ('E4', 'seminegra'), ('C4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
     ('E4', 'seminegra'), ('C#4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
     ('E4', 'seminegra'), ('C4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
-    ('D4', 'blanca con punto'), ('E4', 'negra'),
-    ('F4', 'blanca completa'),
-    ('A5', 'negra con punto'), ('G4', 'seminegra'), ('G4', 'negra'), ('A5', 'negra'),
-    ('C4', 'blanca completa'),
-    ('D4', 'blanca con punto'), ('E4', 'negra'),
-    ('F4', 'blanca'), ('E4', 'blanca'), ('G4', 'blanca'), ('A5', 'blanca'),
-    ('G4', 'blanca'), ('F4', 'blanca'),
-    ('F4', 'negra'), ('F4', 'negra'), ('F4', 'negra'), ('F4', 'negra'),
-    ('A5', 'negra'), ('A5', 'negra'), ('G4', 'negra'), ('F4', 'negra'),
-    ('F4', 'negra'), ('A5', 'negra'), ('A5', 'negra'), ('A5', 'negra'),
-    ('G4', 'negra'), ('A5', 'negra'), ('G4', 'negra'), ('F4', 'negra'),
+    ('D5', 'blanca con punto'), ('E5', 'negra'),
+    ('F5', 'blanca completa'),
+    ('A5', 'negra con punto'), ('G5', 'seminegra'), ('rest','seminegra'), ('G5', 'negra'), ('A5', 'negra'),
+    ('C5', 'blanca completa'),
+    ('D5', 'blanca con punto'), ('E5', 'negra'),
+    ('F5', 'blanca'), ('E5', 'blanca'), ('G5', 'blanca'), ('A5', 'blanca'),
+    ('G5', 'blanca'), ('F5', 'blanca'),('rest','seminegra'),
+    ('F5', 'negra'),('rest','seminegra'), ('F5', 'negra'),('rest','seminegra'), ('F5', 'negra'),('rest','seminegra'), ('F5', 'negra'),
+    ('A5', 'negra'),('rest','seminegra'), ('A5', 'negra'), ('G5', 'negra'), ('F5', 'negra'), ('rest','seminegra'),
+    ('F5', 'negra'), ('A5', 'negra'),('rest','seminegra'), ('A5', 'negra'),('rest','seminegra'), ('A5', 'negra'),
+    ('G5', 'negra'), ('A5', 'negra'), ('G5', 'negra'), ('F5', 'negra'),
 ]
 for note, dur in input_notes:
     print(generate_quad(note, dur))
