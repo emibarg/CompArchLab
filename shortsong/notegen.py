@@ -1,82 +1,72 @@
-note_frequencies = {
-    "C5": 523.25,
-    "C#5": 554.37,
-    "D5": 587.33,
-    "Eb5": 622.25,
-    "E5": 659.25,
-    "F5": 698.46,
-    "F#5": 739.99,
-    "G5": 783.99,
-    "G#5": 830.61,
-    "A5": 880.00,
-    "Bb5": 932.33,
-    "B5": 987.77,
-    "C6": 1046.5,
-    "C#6": 1108.73,
-    "D6": 1174.66,
-    "Eb6": 1244.51,
-    "E6": 1318.51,
-    "F6": 1396.91,
-    "rest": 0.0,
-    "Bb4": 466.16,
-    "A4": 440.0,
-    "C5": 523.25,
+# Ya definidos
+base_frequencies = {
+    "C4": 261.8, "C#4": 277.0, "D4": 294.3, "E4": 330.9,
+    "F4": 348.1, "G4": 391.0, "A4": 442.0, "B4": 493.5,
+
+    "C5": 523.3, "C#5": 554.4, "D5": 587.3, "D#5": 622.3,
+    "E5": 659.3, "F5": 698.5, "F#5": 739.9, "G5": 783.9,
+    "G#5": 830.6, "A5": 880.0, "A#5": 932.3, "B5": 987.8,
+
+    "rest": 1,
 }
 
-calculated_note_values = {
-    "C5": 11500,
-    "C#5": 10800,
-    "D5": 10230,
-    "Eb5": 9700,
-    "E5": 9100,
-    "F5": 8650,
-    "F#5": 8200,
-    "G5": 7700,
-    "G#5": 7250,
-    "A5": 6800,
-    "Bb5": 6400,
-    "B5": 6100,
-    "C6": 5750,
-    "C#6": 5400,
-    "D6": 5100,
-    "Eb6": 4800,
-    "E6": 4550,
-    "F6": 4300,
-    "rest": 0,
-    "Bb4": 6600,
-    "A4": 6900,
+base_values = {
+    "C4": 11500, "C#4": 10600, "D4": 10230, "E4": 9100,
+    "F4": 8650, "G4": 7700, "A4": 6800, "B4": 6100,
+
+    "C5": 5740, "C#5": 5450, "D5": 5140, "D#5": 4850,
+    "E5": 4550, "F5": 4320, "F#5": 4075, "G5": 3830,
+    "G#5": 3633, "A5": 3428, "A#5": 3225, "B5": 3050,
+
+    "rest": 100000,
 }
 
+duration_to_seconds = {
+    "seminegra": 0.09375,
+    "negra": 0.1875,
+    "negra con punto": 0.28125,
+    "blanca": 0.375,
+    "blanca con punto": 0.5625,
+    "blanca completa": 0.75,
+}
 
-melody_data = [
-    ("D5", 10230), ("F5", 8650), ("A5", 6800), ("C6", 5750), ("A5", 6800), ("F5", 8650), ("D5", 10230), ("F5", 8650),
-    ("G5", 7700), ("Bb5", 6400), ("D6", 5100), ("F6", 4300), ("D6", 5100), ("Bb5", 6400), ("G5", 7700), ("Bb5", 6400),
-    ("E5", 9100), ("G5", 7700), ("B5", 6100), ("D6", 5100), ("B5", 6100), ("G5", 7700), ("E5", 9100), ("G5", 7700),
-    ("F#5", 8200), ("A5", 6800), ("C#6", 5400), ("E6", 4550), ("C#6", 5400), ("A5", 6800), ("F#5", 8200), ("A5", 6800),
-    ("F#5", 8200), ("A5", 6800), ("C#6", 5400), ("E6", 4550), ("C#6", 5400), ("A5", 6800), ("F#5", 8200), ("A5", 6800),
-    ("Eb5", 9700),
-    ("D5", 10230),
-    ("C5", 11500), ("D5", 10230), ("Eb5", 9700), ("F5", 8650), ("Eb5", 9700),
-    ("D5", 10230),
-    ("C5", 11500),
-    ("Bb4", 6600),
-    ("A4", 6900),
-    ("Bb4", 6600), ("C5", 11500),
-    ("D5", 10230), ("Eb5", 9700), ("F5", 8650), ("G5", 7700),
-    ("F5", 8650), ("Eb5", 9700), ("D5", 10230), ("C5", 11500),
-    ("D5", 10230), ("Eb5", 9700), ("F5", 8650), ("G5", 7700),
-    ("F5", 8650), ("Eb5", 9700), ("D5", 10230), ("C5", 11500),
+def generate_quad(note_str, duration_label):
+    if duration_label not in duration_to_seconds:
+        return f"// Duración desconocida: {duration_label}"
+
+    if note_str.lower() == "rest":
+        return f".quad 0, 0    // rest, {duration_label}"
+
+    if note_str not in base_frequencies or note_str not in base_values:
+        return f"// Nota desconocida: {note_str}"
+
+    freq = base_frequencies[note_str]
+    value = base_values[note_str]
+    duration = round(freq * duration_to_seconds[duration_label])
+
+    return f".quad {value}, {duration}    // {note_str}, {duration_label}"
+
+# 📝 Aquí va tu lista input_notes (ya la tienes en tu mensaje)
+input_notes = [
+    ('F4', 'seminegra'), ('D4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
+    ('F4', 'seminegra'), ('D4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
+    ('F4', 'seminegra'), ('C4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
+    ('F4', 'seminegra'), ('C4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
+    ('E4', 'seminegra'), ('C#4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
+    ('E4', 'seminegra'), ('C4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
+    ('E4', 'seminegra'), ('C#4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
+    ('E4', 'seminegra'), ('C4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
+    ('D4', 'blanca con punto'), ('E4', 'negra'),
+    ('F4', 'blanca completa'),
+    ('A5', 'negra con punto'), ('G4', 'seminegra'), ('G4', 'negra'), ('A5', 'negra'),
+    ('C4', 'blanca completa'),
+    ('D4', 'blanca con punto'), ('E4', 'negra'),
+    ('F4', 'blanca'), ('E4', 'blanca'), ('G4', 'blanca'), ('A5', 'blanca'),
+    ('G4', 'blanca'), ('F4', 'blanca'),
+    ('F4', 'negra'), ('F4', 'negra'), ('F4', 'negra'), ('F4', 'negra'),
+    ('A5', 'negra'), ('A5', 'negra'), ('G4', 'negra'), ('F4', 'negra'),
+    ('F4', 'negra'), ('A5', 'negra'), ('A5', 'negra'), ('A5', 'negra'),
+    ('G4', 'negra'), ('A5', 'negra'), ('G4', 'negra'), ('F4', 'negra'),
 ]
-
-
-print(".align 3")
-print("melody:")
-for note, duration_value in melody_data:
-    if note == "rest":
-        print(f"    .quad {duration_value}, 18750    // rest")
-    elif note in note_frequencies:
-        freq = note_frequencies[note]
-        duration = round(freq * 0.1875)  # Ajustado a semicorchea
-        print(f"    .quad {duration_value}, {duration}    // {note}")
-    else:
-        print(f"    // Unknown note: {note}")
+for note, dur in input_notes:
+    print(generate_quad(note, dur))
