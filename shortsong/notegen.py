@@ -22,12 +22,12 @@ base_values = {
 }
 
 duration_to_seconds = {
-    "seminegra": 0.09375,
-    "negra": 0.1875,
-    "negra con punto": 0.28125,
-    "blanca": 0.375,
-    "blanca con punto": 0.5625,
-    "blanca completa": 0.75,
+    "seminegra": 0.1875,
+    "negra": 0.375,
+    "negra con punto": 0.5625,
+    "blanca": 0.75,
+    "blanca con punto": 0.9375,
+    "blanca completa": 1.5,
 }
 
 def generate_quad(note_str, duration_label):

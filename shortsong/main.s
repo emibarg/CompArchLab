@@ -151,67 +151,68 @@ CoreLoop:
     // Line 1: D, (rest), D, E, F, A, G, A, C, D, E, F, E, G, A, G, F
 .align 3
     melody:
-        .quad 8650, 33    // F4, seminegra
-        .quad 10230, 28    // D4, seminegra
-        .quad 6800, 41    // A4, seminegra
-        .quad 10230, 28    // D4, seminegra
-        .quad 8650, 33    // F4, seminegra
-        .quad 10230, 28    // D4, seminegra
-        .quad 6800, 41    // A4, seminegra
-        .quad 10230, 28    // D4, seminegra
-        .quad 8650, 33    // F4, seminegra
-        .quad 11500, 25    // C4, seminegra
-        .quad 6800, 41    // A4, seminegra
-        .quad 10230, 28    // D4, seminegra
-        .quad 8650, 33    // F4, seminegra
-        .quad 11500, 25    // C4, seminegra
-        .quad 6800, 41    // A4, seminegra
-        .quad 10230, 28    // D4, seminegra
-        .quad 9100, 31    // E4, seminegra
-        .quad 10600, 26    // C#4, seminegra
-        .quad 6800, 41    // A4, seminegra
-        .quad 10230, 28    // D4, seminegra
-        .quad 9100, 31    // E4, seminegra
-        .quad 11500, 25    // C4, seminegra
-        .quad 6800, 41    // A4, seminegra
-        .quad 10230, 28    // D4, seminegra
-        .quad 9100, 31    // E4, seminegra
-        .quad 10600, 26    // C#4, seminegra
-        .quad 6800, 41    // A4, seminegra
-        .quad 10230, 28    // D4, seminegra
-        .quad 9100, 31    // E4, seminegra
-        .quad 11500, 25    // C4, seminegra
-        .quad 6800, 41    // A4, seminegra
-        .quad 10230, 28    // D4, seminegra
-        .quad 10230, 166    // D4, blanca con punto
-        .quad 9100, 62    // E4, negra
-        .quad 8650, 261    // F4, blanca completa
-        .quad 3428, 248    // A5, negra con punto
-        .quad 7700, 37    // G4, seminegra
-        .quad 7700, 73    // G4, negra
-        .quad 3428, 165    // A5, negra
-        .quad 11500, 196    // C4, blanca completa
-        .quad 10230, 166    // D4, blanca con punto
-        .quad 9100, 62    // E4, negra
-        .quad 8650, 131    // F4, blanca
-        .quad 9100, 124    // E4, blanca
-        .quad 7700, 147    // G4, blanca
-        .quad 3428, 330    // A5, blanca
-        .quad 7700, 147    // G4, blanca
-        .quad 8650, 131    // F4, blanca
-        .quad 8650, 65    // F4, negra
-        .quad 8650, 65    // F4, negra
-        .quad 8650, 65    // F4, negra
-        .quad 8650, 65    // F4, negra
-        .quad 3428, 165    // A5, negra
-        .quad 3428, 165    // A5, negra
-        .quad 7700, 73    // G4, negra
-        .quad 8650, 65    // F4, negra
-        .quad 8650, 65    // F4, negra
-        .quad 3428, 165    // A5, negra
-        .quad 3428, 165    // A5, negra
-        .quad 3428, 165    // A5, negra
-        .quad 7700, 73    // G4, negra
-        .quad 3428, 165    // A5, negra
-        .quad 7700, 73    // G4, negra
-        .quad 8650, 65    // F4, negra
+        .quad 8650, 65    // F4, seminegra
+        .quad 10230, 55    // D4, seminegra
+        .quad 6800, 83    // A4, seminegra
+        .quad 10230, 55    // D4, seminegra
+        .quad 8650, 65    // F4, seminegra
+        .quad 10230, 55    // D4, seminegra
+        .quad 6800, 83    // A4, seminegra
+        .quad 10230, 55    // D4, seminegra
+        .quad 8650, 65    // F4, seminegra
+        .quad 11500, 49    // C4, seminegra
+        .quad 6800, 83    // A4, seminegra
+        .quad 10230, 55    // D4, seminegra
+        .quad 8650, 65    // F4, seminegra
+        .quad 11500, 49    // C4, seminegra
+        .quad 6800, 83    // A4, seminegra
+        .quad 10230, 55    // D4, seminegra
+        .quad 9100, 62    // E4, seminegra
+        .quad 10600, 52    // C#4, seminegra
+        .quad 6800, 83    // A4, seminegra
+        .quad 10230, 55    // D4, seminegra
+        .quad 9100, 62    // E4, seminegra
+        .quad 11500, 49    // C4, seminegra
+        .quad 6800, 83    // A4, seminegra
+        .quad 10230, 55    // D4, seminegra
+        .quad 9100, 62    // E4, seminegra
+        .quad 10600, 52    // C#4, seminegra
+        .quad 6800, 83    // A4, seminegra
+        .quad 10230, 55    // D4, seminegra
+        .quad 9100, 62    // E4, seminegra
+        .quad 11500, 49    // C4, seminegra
+        .quad 6800, 83    // A4, seminegra
+        .quad 10230, 55    // D4, seminegra
+        .quad 10230, 276    // D4, blanca con punto
+        .quad 9100, 124    // E4, negra
+        .quad 8650, 522    // F4, blanca completa
+        .quad 3428, 495    // A5, negra con punto
+        .quad 7700, 73    // G4, seminegra
+        .quad 7700, 147    // G4, negra
+        .quad 3428, 330    // A5, negra
+        .quad 11500, 393    // C4, blanca completa
+        .quad 10230, 276    // D4, blanca con punto
+        .quad 9100, 124    // E4, negra
+        .quad 8650, 261    // F4, blanca
+        .quad 9100, 248    // E4, blanca
+        .quad 7700, 293    // G4, blanca
+        .quad 3428, 660    // A5, blanca
+        .quad 7700, 293    // G4, blanca
+        .quad 8650, 261    // F4, blanca
+        .quad 8650, 131    // F4, negra
+        .quad 8650, 131    // F4, negra
+        .quad 8650, 131    // F4, negra
+        .quad 8650, 131    // F4, negra
+        .quad 3428, 330    // A5, negra
+        .quad 3428, 330    // A5, negra
+        .quad 7700, 147    // G4, negra
+        .quad 8650, 131    // F4, negra
+        .quad 8650, 131    // F4, negra
+        .quad 3428, 330    // A5, negra
+        .quad 3428, 330    // A5, negra
+        .quad 3428, 330    // A5, negra
+        .quad 7700, 147    // G4, negra
+        .quad 3428, 330    // A5, negra
+        .quad 7700, 147    // G4, negra
+        .quad 8650, 131    // F4, negra
+        
