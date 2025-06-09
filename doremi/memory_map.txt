@@ -1,5 +1,11 @@
 
-There are no discarded input sections
+Merging program properties
+
+
+Discarded input sections
+
+ .note.gnu.property
+                0x0000000000000000        0x0 main.o
 
 Memory Configuration
 
@@ -11,15 +17,15 @@ Linker script and memory map
 
 LOAD main.o
 
-.text           0x0000000000000000      0x120
+.text           0x0000000000000000      0x170
  *(.text*)
- .text          0x0000000000000000      0x120 main.o
+ .text          0x0000000000000000      0x170 main.o
 
-.data           0x0000000000000120        0x0
- .data          0x0000000000000120        0x0 main.o
+.data           0x0000000000000170        0x0
+ .data          0x0000000000000170        0x0 main.o
 
-.bss            0x0000000000000120        0x0
+.bss            0x0000000000000170        0x0
  *(.bss*)
- .bss           0x0000000000000120        0x0 main.o
+ .bss           0x0000000000000170        0x0 main.o
 OUTPUT(main.elf elf64-littleaarch64)
 LOAD linker stubs

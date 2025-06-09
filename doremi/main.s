@@ -44,7 +44,7 @@
     // Cargamos el puntero a la dir de memoria de la tabla.
     ldr x20, =melody
     // Guardamos la cantidad de notas que hay.
-    mov x21, #7
+    mov x21, #12
     // Iniciamos el indice.
     mov x22, #0
 
@@ -111,12 +111,27 @@ CoreLoop:
 // Esta directiva hace que se alinee en 8 bytes lo que queremos guardar.
 .align 3
 melody:
-    .quad 11500, 1309    // DO 261.8  vs 261.63
-    .quad 10230, 1469     // RE  294.3 vs 293.66
-    .quad 9100, 1649    // MI  330.9 vs 329.63
-    .quad 8650, 1747     // FA   348.1vs 349.23
-    .quad 7700, 1960     // SOL   391 vs 392
-    .quad 6800, 2200     // LA  442 vs 440
-    .quad 6100, 2470     // SI 493.5 vs 493.88
+    // Octava 4
+    //.quad 11500, 1309    // DO 261.8  vs 261.63
+    //.quad 10230, 1469     // RE  294.3 vs 293.66
+    //.quad 9100, 1649    // MI  330.9 vs 329.63
+    //.quad 8650, 1747     // FA   348.1vs 349.23
+    //.quad 7700, 1960     // SOL   391 vs 392
+    //.quad 6800, 2200     // LA  442 vs 440
+    //.quad 6100, 2470     // SI 493.5 vs 493.88
+	//Octava 5
+	.quad 5740, 1589 // DO 524.5 vs 523.25
+	.quad 5450, 1664 // DO# 552.3 vs 554.36
+	.quad 5140, 1762 // RE 585.7 vs 587.33
+	.quad 4850, 1887 // RE# 620.7 vs 622.25
+	.quad 4550, 1978 // MI 661.5 vs 659.25
+	.quad 4320, 2095 // FA 696.7 vs 698.46
+	.quad 4075, 2220 // FA# 738.6 vs 739.99
+	.quad 3830, 2351 // SOL 785.7 vs 783.99
+	.quad 3633, 2492 // SOL# 828.3 vs 830.61
+	.quad 3428, 2640 // LA 878 vs 880
+	.quad 3225, 2797 // LA# 933 vs 932.33
+	.quad 3050, 2963 // SI 986 vs 987.76
+	
 
 
