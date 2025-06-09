@@ -35,7 +35,7 @@ def generate_quad(note_str, duration_label):
         return f"// Duración desconocida: {duration_label}"
 
     if note_str.lower() == "rest":
-        return f".quad 1, 1000    // rest, {duration_label}"
+        return f".quad 1, 10000    // rest, {duration_label}"
 
     if note_str not in base_frequencies or note_str not in base_values:
         return f"// Nota desconocida: {note_str}"
@@ -48,14 +48,14 @@ def generate_quad(note_str, duration_label):
 
 # 📝 Aquí va tu lista input_notes (ya la tienes en tu mensaje)
 input_notes = [
-    ('F4', 'seminegra'), ('D4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
-    ('F4', 'seminegra'), ('D4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
-    ('F4', 'seminegra'), ('C4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
-    ('F4', 'seminegra'), ('C4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
-    ('E4', 'seminegra'), ('C#4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
-    ('E4', 'seminegra'), ('C4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
-    ('E4', 'seminegra'), ('C#4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
-    ('E4', 'seminegra'), ('C4', 'seminegra'), ('A4', 'seminegra'), ('D4', 'seminegra'),
+    ('F5', 'seminegra'), ('D5', 'seminegra'), ('A4', 'seminegra'), ('D5', 'seminegra'),
+    ('F5', 'seminegra'), ('D5', 'seminegra'), ('A4', 'seminegra'), ('D5', 'seminegra'),
+    ('F5', 'seminegra'), ('C5', 'seminegra'), ('A4', 'seminegra'), ('D5', 'seminegra'),
+    ('F5', 'seminegra'), ('C5', 'seminegra'), ('A4', 'seminegra'), ('D5', 'seminegra'),
+    ('E5', 'seminegra'), ('C#5', 'seminegra'), ('A4', 'seminegra'), ('D5', 'seminegra'),
+    ('E5', 'seminegra'), ('C5', 'seminegra'), ('A4', 'seminegra'), ('D5', 'seminegra'),
+    ('E5', 'seminegra'), ('C#5', 'seminegra'), ('A4', 'seminegra'), ('D5', 'seminegra'),
+    ('E5', 'seminegra'), ('C5', 'seminegra'), ('A4', 'seminegra'), ('D5', 'seminegra'),
     ('D5', 'blanca con punto'), ('E5', 'negra'),
     ('F5', 'blanca completa'),
     ('A5', 'negra con punto'), ('G5', 'seminegra'), ('rest','seminegra'), ('G5', 'negra'), ('A5', 'negra'),

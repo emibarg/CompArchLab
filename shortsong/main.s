@@ -151,44 +151,44 @@ CoreLoop:
     // Line 1: D, (rest), D, E, F, A, G, A, C, D, E, F, E, G, A, G, F
 .align 3
     melody:
-        .quad 8650, 65    // F4, seminegra
-        .quad 10230, 55    // D4, seminegra
+       .quad 4320, 131    // F5, seminegra
+        .quad 5140, 110    // D5, seminegra
         .quad 6800, 83    // A4, seminegra
-        .quad 10230, 55    // D4, seminegra
-        .quad 8650, 65    // F4, seminegra
-        .quad 10230, 55    // D4, seminegra
+        .quad 5140, 110    // D5, seminegra
+        .quad 4320, 131    // F5, seminegra
+        .quad 5140, 110    // D5, seminegra
         .quad 6800, 83    // A4, seminegra
-        .quad 10230, 55    // D4, seminegra
-        .quad 8650, 65    // F4, seminegra
-        .quad 11500, 49    // C4, seminegra
+        .quad 5140, 110    // D5, seminegra
+        .quad 4320, 131    // F5, seminegra
+        .quad 5740, 98    // C5, seminegra
         .quad 6800, 83    // A4, seminegra
-        .quad 10230, 55    // D4, seminegra
-        .quad 8650, 65    // F4, seminegra
-        .quad 11500, 49    // C4, seminegra
+        .quad 5140, 110    // D5, seminegra
+        .quad 4320, 131    // F5, seminegra
+        .quad 5740, 98    // C5, seminegra
         .quad 6800, 83    // A4, seminegra
-        .quad 10230, 55    // D4, seminegra
-        .quad 9100, 62    // E4, seminegra
-        .quad 10600, 52    // C#4, seminegra
+        .quad 5140, 110    // D5, seminegra
+        .quad 4550, 124    // E5, seminegra
+        .quad 5450, 104    // C#5, seminegra
         .quad 6800, 83    // A4, seminegra
-        .quad 10230, 55    // D4, seminegra
-        .quad 9100, 62    // E4, seminegra
-        .quad 11500, 49    // C4, seminegra
+        .quad 5140, 110    // D5, seminegra
+        .quad 4550, 124    // E5, seminegra
+        .quad 5740, 98    // C5, seminegra
         .quad 6800, 83    // A4, seminegra
-        .quad 10230, 55    // D4, seminegra
-        .quad 9100, 62    // E4, seminegra
-        .quad 10600, 52    // C#4, seminegra
+        .quad 5140, 110    // D5, seminegra
+        .quad 4550, 124    // E5, seminegra
+        .quad 5450, 104    // C#5, seminegra
         .quad 6800, 83    // A4, seminegra
-        .quad 10230, 55    // D4, seminegra
-        .quad 9100, 62    // E4, seminegra
-        .quad 11500, 49    // C4, seminegra
+        .quad 5140, 110    // D5, seminegra
+        .quad 4550, 124    // E5, seminegra
+        .quad 5740, 98    // C5, seminegra
         .quad 6800, 83    // A4, seminegra
-        .quad 10230, 55    // D4, seminegra
+        .quad 5140, 110    // D5, seminegra
         .quad 5140, 551    // D5, blanca con punto
         .quad 4550, 247    // E5, negra
         .quad 4320, 1048    // F5, blanca completa
         .quad 3428, 495    // A5, negra con punto
         .quad 3830, 147    // G5, seminegra
-        .quad 1, 1000    // rest, seminegra
+        .quad 1, 10000    // rest, seminegra
         .quad 3830, 294    // G5, negra
         .quad 3428, 330    // A5, negra
         .quad 5740, 785    // C5, blanca completa
@@ -200,25 +200,25 @@ CoreLoop:
         .quad 3428, 660    // A5, blanca
         .quad 3830, 588    // G5, blanca
         .quad 4320, 524    // F5, blanca
-        .quad 1, 1000    // rest, seminegra
+        .quad 1, 10000    // rest, seminegra
         .quad 4320, 262    // F5, negra
-        .quad 1, 1000    // rest, seminegra
+        .quad 1, 10000    // rest, seminegra
         .quad 4320, 262    // F5, negra
-        .quad 1, 1000    // rest, seminegra
+        .quad 1, 10000    // rest, seminegra
         .quad 4320, 262    // F5, negra
-        .quad 1, 1000    // rest, seminegra
+        .quad 1, 10000    // rest, seminegra
         .quad 4320, 262    // F5, negra
         .quad 3428, 330    // A5, negra
-        .quad 1, 1000    // rest, seminegra
+        .quad 1, 10000    // rest, seminegra
         .quad 3428, 330    // A5, negra
         .quad 3830, 294    // G5, negra
         .quad 4320, 262    // F5, negra
-        .quad 1, 1000    // rest, seminegra
+        .quad 1, 10000    // rest, seminegra
         .quad 4320, 262    // F5, negra
         .quad 3428, 330    // A5, negra
-        .quad 1, 1000    // rest, seminegra
+        .quad 1, 10000    // rest, seminegra
         .quad 3428, 330    // A5, negra
-        .quad 1, 1000    // rest, seminegra
+        .quad 1, 10000    // rest, seminegra
         .quad 3428, 330    // A5, negra
         .quad 3830, 294    // G5, negra
         .quad 3428, 330    // A5, negra
