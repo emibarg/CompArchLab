@@ -48,7 +48,7 @@ _start:
     // Load the pointer to the melody table.
     ldr x20, =melody
     // Total number of note entries is 69 (as defined by the table).
-    mov x21, #119              
+    mov x21, #117              
     // Initialize note index to 0.
     mov x22, #0
     add xzr,xzr,xzr //nop 16
@@ -200,8 +200,6 @@ CoreLoop:
         .quad 3428, 660    // A5, blanca
         .quad 3830, 588    // G5, blanca
         .quad 4320, 524    // F5, blanca
-        .quad 1, 10000    // rest, seminegra
-        .quad 4320, 262    // F5, negra
         .quad 1, 10000    // rest, seminegra
         .quad 4320, 262    // F5, negra
         .quad 1, 10000    // rest, seminegra
