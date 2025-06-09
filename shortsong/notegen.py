@@ -8,6 +8,8 @@ base_frequencies = {
     "G#5": 830.6, "A5": 880.0, "A#5": 932.3, "B5": 987.8,
 
     "rest": 1,
+
+    "C6": 1046.5, "C#6": 1108.7, "D6": 1174.7,
 }
 
 base_values = {
@@ -19,6 +21,8 @@ base_values = {
     "G#5": 3633, "A5": 3428, "A#5": 3225, "B5": 3050,
 
     "rest": 100000,
+    "C6": 2900, "C#6": 2730, "D6": 2590,
+
 }
 
 duration_to_seconds = {
@@ -67,6 +71,12 @@ input_notes = [
     ('A5', 'negra'),('rest','seminegra'), ('A5', 'negra'), ('G5', 'negra'), ('F5', 'negra'), ('rest','seminegra'),
     ('F5', 'negra'), ('A5', 'negra'),('rest','seminegra'), ('A5', 'negra'),('rest','seminegra'), ('A5', 'negra'),
     ('G5', 'negra'), ('A5', 'negra'), ('G5', 'negra'), ('F5', 'negra'),
+     ('F5', 'negra'), ('rest', 'seminegra'), ('F5', 'negra'),( 'rest', 'seminegra'), ('F5', 'negra'),('rest', 'seminegra'), ('F5', 'negra'),
+    ('A5', 'negra'), ('rest', 'seminegra'), ('A5', 'negra'), ('G5', 'negra'), ('F5', 'negra'), ('F5', 'negra'), ('A5', 'negra'), ('rest', 'seminegra'),
+    ('A5', 'negra'), ('rest', 'seminegra'), ('A5', 'negra'), ('A5', 'negra'), ('C#6', 'negra'), ('rest', 'seminegra'),( 'C6', 'negra'),('rest','seminegra'), ('C6', 'negra'), ('C6', 'negra'),
+    ('F5', 'negra'), ('rest', 'seminegra'), ('F5', 'negra'), ('rest', 'seminegra'), ('F5', 'negra'), 
+    ('A5', 'negra'), ('rest', 'seminegra'), ('A5', 'negra'), ('G5', 'negra'), ('F5', 'negra'), ('F5', 'negra'), ('B5', 'negra'), ('rest', 'seminegra'),( 'B5', 'negra'), ('rest', 'seminegra'), ('B5', 'negra'), ('G5', 'blanca'), ('C6', 'blanca'), ('A5', 'blanca'), ('C#6', 'blanca'), ('D6', 'blanca completa'),
+
 ]
 for note, dur in input_notes:
     print(generate_quad(note, dur))
