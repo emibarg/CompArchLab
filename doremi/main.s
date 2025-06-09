@@ -44,7 +44,7 @@
     // Cargamos el puntero a la dir de memoria de la tabla.
     ldr x20, =melody
     // Guardamos la cantidad de notas que hay.
-    mov x21, #12
+    mov x21, #3
     // Iniciamos el indice.
     mov x22, #0
 
@@ -120,18 +120,22 @@ melody:
     //.quad 6800, 2200     // LA  442 vs 440
     //.quad 6100, 2470     // SI 493.5 vs 493.88
 	//Octava 5
-	.quad 5740, 1589 // DO 524.5 vs 523.25
-	.quad 5450, 1664 // DO# 552.3 vs 554.36
-	.quad 5140, 1762 // RE 585.7 vs 587.33
-	.quad 4850, 1887 // RE# 620.7 vs 622.25
-	.quad 4550, 1978 // MI 661.5 vs 659.25
-	.quad 4320, 2095 // FA 696.7 vs 698.46
-	.quad 4075, 2220 // FA# 738.6 vs 739.99
-	.quad 3830, 2351 // SOL 785.7 vs 783.99
-	.quad 3633, 2492 // SOL# 828.3 vs 830.61
-	.quad 3428, 2640 // LA 878 vs 880
-	.quad 3225, 2797 // LA# 933 vs 932.33
-	.quad 3050, 2963 // SI 986 vs 987.76
+	//.quad 5740, 1589 // DO 524.5 vs 523.25
+	//.quad 5450, 1664 // DO# 552.3 vs 554.36
+	//.quad 5140, 1762 // RE 585.7 vs 587.33
+	//.quad 4850, 1887 // RE# 620.7 vs 622.25
+	//.quad 4550, 1978 // MI 661.5 vs 659.25
+	//.quad 4320, 2095 // FA 696.7 vs 698.46
+	//.quad 4075, 2220 // FA# 738.6 vs 739.99
+	//.quad 3830, 2351 // SOL 785.7 vs 783.99
+	//.quad 3633, 2492 // SOL# 828.3 vs 830.61
+	//.quad 3428, 2640 // LA 878 vs 880
+	//.quad 3225, 2797 // LA# 933 vs 932.33
+	//.quad 3050, 2963 // SI 986 vs 987.76
+	// Octava 6
+	.quad 2900, 3000 // DO 1040 vs 1046.4
+	.quad 2730, 3000 // DO# 1100 vs 1108.73
+	.quad 2590, 3000 // RE 1160 vs 1174.66
 	
 
 

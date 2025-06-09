@@ -224,3 +224,4 @@ CoreLoop:
         .quad 3428, 330    // A5, negra
         .quad 3830, 294    // G5, negra
         .quad 4320, 262    // F5, negra
+	

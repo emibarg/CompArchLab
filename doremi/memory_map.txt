@@ -17,15 +17,15 @@ Linker script and memory map
 
 LOAD main.o
 
-.text           0x0000000000000000      0x170
+.text           0x0000000000000000       0xe0
  *(.text*)
- .text          0x0000000000000000      0x170 main.o
+ .text          0x0000000000000000       0xe0 main.o
 
-.data           0x0000000000000170        0x0
- .data          0x0000000000000170        0x0 main.o
+.data           0x00000000000000e0        0x0
+ .data          0x00000000000000e0        0x0 main.o
 
-.bss            0x0000000000000170        0x0
+.bss            0x00000000000000e0        0x0
  *(.bss*)
- .bss           0x0000000000000170        0x0 main.o
+ .bss           0x00000000000000e0        0x0 main.o
 OUTPUT(main.elf elf64-littleaarch64)
 LOAD linker stubs
