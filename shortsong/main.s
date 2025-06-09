@@ -48,7 +48,7 @@ _start:
     // Load the pointer to the melody table.
     ldr x20, =melody
     // Total number of note entries is 69 (as defined by the table).
-    mov x21, #69              
+    mov x21, #119              
     // Initialize note index to 0.
     mov x22, #0
     add xzr,xzr,xzr //nop 16
