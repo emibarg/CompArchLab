@@ -30,7 +30,7 @@ Disassembly of section .text:
   50:	8b0c028c 	add	x12, x20, x12
   54:	f940018a 	ldr	x10, [x12]
   58:	f940058b 	ldr	x11, [x12, #8]
-  5c:	f100015f 	cmp	x10, #0x0
+  5c:	f100055f 	cmp	x10, #0x1
   60:	540002a0 	b.eq	b4 <rest_loop>  // b.none
 
 0000000000000064 <toggle_loop>:
