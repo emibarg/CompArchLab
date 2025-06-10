@@ -70,7 +70,7 @@ melody_loop:
 
     // ---------- IF Rest ----------
     cmp x10, #1 // 24
-    beq rest_loop            // If half‑period = 0, vamos a un descanso (pause)
+    beq rest_loop            // If half‑period = 1, vamos a un descanso (pause)
 
 
 
